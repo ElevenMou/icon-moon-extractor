@@ -10,3 +10,12 @@
 body {
     background-color: $color-background;
 }
+.app-main:before {
+    background: linear-gradient(180deg, $color-dark, $color-primary);
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    display: block;
+    position: fixed;
+}

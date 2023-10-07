@@ -6,7 +6,12 @@ header.header {
     justify-content: center;
     font-size: 28px;
     font-weight: 700;
-    background-color: $color-primary;
+    background-color: $color-dark;
     gap: 5px;
     color: $color-secondary;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
 }
