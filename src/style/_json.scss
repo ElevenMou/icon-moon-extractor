@@ -49,11 +49,11 @@ label {
     align-items: center;
     transition: all 0.2s ease;
     width: 100%;
-}
-.form-control:hover,
-.form-control:focus {
-    border-color: $color-secondary;
-    outline-color: $color-secondary;
+    &:hover,
+    &:focus {
+        border-color: $color-secondary;
+        outline-color: $color-secondary;
+    }
 }
 input[type="file"] {
     height: 45px;
@@ -63,19 +63,19 @@ input[type="file"] {
     border-radius: 8px;
     display: flex;
     align-items: center;
-}
-input[type="file"]::file-selector-button {
-    margin-right: 15px;
-    border: none;
-    background: $color-terciary;
-    padding: 5px 15px;
-    border-radius: 8px;
-    color: $color-light;
-    cursor: pointer;
-    height: 100%;
-}
-input[type="file"]:hover {
-    border-color: $color-secondary;
+    &::file-selector-button {
+        margin-right: 15px;
+        border: none;
+        background: $color-terciary;
+        padding: 5px 15px;
+        border-radius: 8px;
+        color: $color-light;
+        cursor: pointer;
+        height: 100%;
+    }
+    &:hover {
+        border-color: $color-secondary;
+    }
 }
 button {
     height: 40px;
@@ -89,15 +89,15 @@ button {
     border-radius: 8px;
     cursor: pointer;
     transition: filter 0.2s;
-}
-button.reset {
-    background-color: $color-terciary;
-}
-button:hover {
-    filter: brightness(1.1);
-}
-button.xlsx {
-    background-color: #20615b;
+    &:hover {
+        filter: brightness(1.1);
+    }
+    &.reset {
+        background-color: $color-terciary;
+    }
+    &.xlsx {
+        background-color: #20615b;
+    }
 }
 .input-btn {
     display: flex;

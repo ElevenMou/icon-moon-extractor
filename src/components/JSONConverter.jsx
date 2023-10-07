@@ -19,12 +19,20 @@ const JSONConverter = () => {
                 try {
                     // Parse the JSON data
                     const parsedData = JSON.parse(event.target.result);
-                    const iconsName = parsedData.icons.map((el) => {
+                    const icons = parsedData.icons.map((el) => {
+                        let label = el.properties.name.split("-");
+                        let labelCapitalize = [];
+                        for (const word of label) {
+                            labelCapitalize.push(
+                                word.charAt(0).toUpperCase() + word.slice(1)
+                            );
+                        }
                         return {
                             id: el.properties.name,
+                            label: labelCapitalize.join(" "),
                         };
                     });
-                    setJsonData(iconsName);
+                    setJsonData(icons);
                 } catch (error) {
                     console.error("Error parsing JSON:", error);
                     // Handle JSON parsing error
@@ -53,16 +61,9 @@ const JSONConverter = () => {
             ];
 
             jsonData.map((icon) => {
-                let label = icon.id.split("-");
-                let labelCapitalize = [];
-                for (const word of label) {
-                    labelCapitalize.push(
-                        word.charAt(0).toUpperCase() + word.slice(1)
-                    );
-                }
                 worksheet.addRow({
                     Id: icon.id,
-                    Label: labelCapitalize.join(" "),
+                    Label: icon.label,
                 });
             });
             workbook.xlsx.writeBuffer().then((data) => {
@@ -130,8 +131,24 @@ const JSONConverter = () => {
                             <button onClick={handleExclude}>exclude</button>
                         </div>
                     </div>
-                    <pre>{JSON.stringify(jsonData, null, 2)}</pre>
-                    {/* You can render or process the JSON data here */}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Label</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {jsonData.map((icon) => {
+                                return (
+                                    <tr>
+                                        <td> {icon.id} </td>
+                                        <td>{icon.label} </td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
                 </div>
             )}
         </div>

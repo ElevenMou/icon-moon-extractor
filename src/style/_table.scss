@@ -1,0 +1,39 @@
+table {
+    border: 1px solid $color-secondary;
+    border-radius: 8px;
+    border-spacing: 0;
+    empty-cells: show;
+    white-space: nowrap;
+    width: 100%;
+    word-break: keep-all;
+    table-layout: fixed;
+    border-radius: 12px;
+    background-color: $color-light;
+    overflow: hidden;
+    thead tr th {
+        background-color: $color-secondary;
+        border-bottom: 0;
+        color: $color-light;
+        font-weight: 700;
+        height: 42px;
+        padding: 10px 12px;
+        position: relative;
+        white-space: pre-wrap;
+        text-align: left;
+        &:not(:last-child) {
+            border-right: 1px solid $color-light;
+        }
+    }
+    tbody tr td {
+        border-bottom: 1px solid $color-secondary;
+        height: 54px;
+        padding: 8px 12px;
+        font-weight: 500;
+        font-size: 16px;
+        color: $color-dark;
+        word-break: break-all;
+        &:not(:last-child) {
+            border-right: 1px solid $color-secondary;
+        }
+    }
+}
