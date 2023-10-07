@@ -1,0 +1,105 @@
+.json {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 15vw;
+    gap: 30px;
+    &__result {
+        width: 100%;
+        background-color: $color-light;
+        border: 1px solid $color-secondary;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    &__header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    &__actions {
+        display: flex;
+        gap: 15px;
+    }
+}
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-secondary;
+}
+.form-control {
+    height: 40px;
+    border: 1px solid #888;
+    background-color: $color-light;
+    padding: 5px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+.form-control:hover,
+.form-control:focus {
+    border-color: $color-secondary;
+    outline-color: $color-secondary;
+}
+input[type="file"] {
+    height: 45px;
+    border: 1px solid $color-light;
+    background-color: $color-light;
+    padding: 5px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+input[type="file"]::file-selector-button {
+    margin-right: 15px;
+    border: none;
+    background: $color-terciary;
+    padding: 5px 15px;
+    border-radius: 8px;
+    color: $color-light;
+    cursor: pointer;
+    height: 100%;
+}
+input[type="file"]:hover {
+    border-color: $color-secondary;
+}
+button {
+    height: 40px;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-secondary;
+    color: $color-light;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+button.reset {
+    background-color: $color-terciary;
+}
+button:hover {
+    filter: brightness(1.1);
+}
+button.xlsx {
+    background-color: #20615b;
+}
+.input-btn {
+    display: flex;
+    gap: 15px;
+}
