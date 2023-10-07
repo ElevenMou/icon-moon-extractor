@@ -24,16 +24,23 @@ table {
             border-right: 1px solid $color-light;
         }
     }
-    tbody tr td {
-        border-bottom: 1px solid $color-secondary;
-        height: 54px;
-        padding: 8px 12px;
-        font-weight: 500;
-        font-size: 16px;
-        color: $color-dark;
-        word-break: break-all;
-        &:not(:last-child) {
-            border-right: 1px solid $color-secondary;
+    tbody tr {
+        &:last-child {
+            td {
+                border-bottom: 0;
+            }
+        }
+        td {
+            border-bottom: 1px solid $color-secondary;
+            height: 54px;
+            padding: 8px 12px;
+            font-weight: 500;
+            font-size: 16px;
+            color: $color-dark;
+            word-break: break-all;
+            &:not(:last-child) {
+                border-right: 1px solid $color-secondary;
+            }
         }
     }
 }
